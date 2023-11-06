@@ -32,7 +32,8 @@ export async function scrapeAmazonProduct(url: string){
             $('.priceToPay span.a-price-whole'),
             $('.a.size.base.a-color-price'),
             $('.a-button-selected .a-color-base'),
-            $('.a-price-whole')
+            $('.a-price-whole'),
+            $('.a-price')
           );
       
           const originalPrice = extractPrice(
@@ -64,8 +65,8 @@ export async function scrapeAmazonProduct(url: string){
           currency: currency || '$',
           image: imageUrls[0],
           title,
-          currentPrice: Number(currentPrice) || Number(originalPrice),
-          originalPrice: Number(originalPrice) || Number(currentPrice),
+          currentPrice: Number(parseInt(currentPrice)) || Number(parseInt(currentPrice)),
+          originalPrice: Number(parseInt(originalPrice)) || Number(parseInt(originalPrice)),
           priceHistory: [],
           discountRate: Number(discountRate),
           category: 'category',
@@ -73,12 +74,12 @@ export async function scrapeAmazonProduct(url: string){
           stars: 4.5,
           isOutOfStock: outOfStock,
           description,
-          lowestPrice: Number(currentPrice) || Number(originalPrice),
-          highestPrice: Number(originalPrice) || Number(currentPrice),
-          averagePrice: Number(currentPrice) || Number(originalPrice),
+          lowestPrice: Number(parseInt(currentPrice)) || Number(parseInt(originalPrice)),
+          highestPrice: Number(parseInt(originalPrice)) || Number(parseInt(currentPrice)),
+          averagePrice: Number(parseInt(currentPrice)) || Number(parseInt(originalPrice)),
         }
 
-        
+        console.log(data)
         return data;
     } catch (error: any) {
         throw new Error(`Failed to scrape product ${error.message}`)
