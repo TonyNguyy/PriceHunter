@@ -1,4 +1,4 @@
-import { Product } from '@/types';
+import { Product } from '@/types/Index';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
