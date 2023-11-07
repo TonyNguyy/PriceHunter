@@ -1,5 +1,5 @@
 // import { PriceHistoryItem, Product } from "@/types";
-import { Product, PriceHistoryItem } from "../types/Index";
+import { Product, PriceHistoryItem } from "@/types/Index";
 
 const Notification = {
     WELCOME: 'WELCOME',
