@@ -1,8 +1,6 @@
+// import { PriceHistoryItem, Product } from "@/types";
+import { Product, PriceHistoryItem } from "../types/Index";
 
-import { PriceHistoryItem, Product } from "@/types";
-
-
- 
 const Notification = {
     WELCOME: 'WELCOME',
     CHANGE_OF_STOCK: 'CHANGE_OF_STOCK',
